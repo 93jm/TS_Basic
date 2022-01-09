@@ -8,6 +8,8 @@
     static BEANS_GRAMM_PER_SHOT: number = 7; // class level
     coffeeBeans: number = 0; // instance (object) level
 
+    //커피 콩 전달 받아서 기존 커피콩에 추가함
+    //constructor는 오브젝트 만들때 처음 실행되는 함수
     constructor(coffeeBeans: number) {
       this.coffeeBeans = coffeeBeans;
     }
@@ -18,7 +20,7 @@
 
     makeCoffee(shots: number): CoffeeCup {
       if (this.coffeeBeans < shots * CoffeeMaker.BEANS_GRAMM_PER_SHOT) {
-        throw new Error('Not enough coffee beans!');
+        throw new Error("Not enough coffee beans!");
       }
       this.coffeeBeans -= shots * CoffeeMaker.BEANS_GRAMM_PER_SHOT;
       return {
