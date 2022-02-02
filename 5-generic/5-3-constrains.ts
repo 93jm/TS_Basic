@@ -36,18 +36,19 @@ const ellieAfterPay = pay(ellie);
 const bobAfterPay = pay(bob);
 
 const obj = {
-  name: 'ellie',
+  name: "ellie",
   age: 20,
 };
 
 const obj2 = {
-  animal: '🐕',
+  animal: "🐕",
 };
 
-console.log(getValue(obj, 'name')); // ellie
-console.log(getValue(obj, 'age')); // 20
-console.log(getValue(obj2, 'animal')); // 🐕
+console.log(getValue(obj, "name")); // ellie
+console.log(getValue(obj, "age")); // 20
+console.log(getValue(obj2, "animal")); // 🐕
 
+//T와 K를 제네릭 선언을 하는데 K의 경우는 T의 key중에 하나라는걸 extends하고 반환은 T[K]로 한다
 function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
